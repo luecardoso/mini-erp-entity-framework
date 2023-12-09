@@ -1,0 +1,98 @@
+﻿using MiniERP.DataModels;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MiniERP
+{
+    public partial class Form_Produto : Form
+    {
+        public Form_Produto()
+        {
+            InitializeComponent();
+            CarregarFornecedores();
+        }
+
+        private void button_Buscar_Click(object sender, EventArgs e)
+        {
+            listar();
+        }
+
+        private void listar()
+        {
+            using (var contexto = new MiniErpContext())
+            {
+                DataTable dt = new DataTable();
+                var produtos = contexto.Produtos.ToList();
+
+                if (String.IsNullOrEmpty(textBox_Buscar.Text))
+                {
+                    dataGridView_Clientes.DataSource = produtos;
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void button_Cadastrar_Click(object sender, EventArgs e)
+        {
+            salvar();
+        }
+
+        private void salvar()
+        {
+            try
+            {
+                using (var contexto = new MiniErpContext())
+                {
+                    Produto produto = new Produto();
+                    produto.Nome = textBox_Nome.Text;
+                    produto.Quantidade = int.Parse(textBox_Quantidade.Text);
+                    produto.Preco = float.Parse(textBox_Preco.Text);
+                    produto.FkFornecedor = comboBox_Fornecedor.SelectedIndex;
+                    produto.Descricao = textBox_Descricao.Text;
+
+
+
+                    contexto.Produtos.Add(produto);
+                    contexto.SaveChanges();
+
+                    MessageBox.Show("Produto adicionado com sucesso!");
+                    listar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar o produto");
+                MessageBox.Show("Erro: "+ex);
+
+            }
+        }
+
+        private void CarregarFornecedores()
+        {
+            using (var contexto = new MiniErpContext())
+            {
+                var fornecedores = contexto.Fornecedors.ToList();
+                comboBox_Fornecedor.Items.Clear();
+                comboBox_Fornecedor.DisplayMember = "Nome";
+                comboBox_Fornecedor.DataSource = fornecedores;
+                comboBox_Fornecedor.Refresh();
+            }
+        }
+
+        private void CarregarCategorias()
+        {
+
+        }
+    }
+}
