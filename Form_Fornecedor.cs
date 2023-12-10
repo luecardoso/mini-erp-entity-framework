@@ -53,7 +53,9 @@ namespace MiniERP
                 }
                 else
                 {
-
+                    var listaFornecedor = contexto.Fornecedors.Where(fornecedor => 
+                    fornecedor.Nome.Contains(textBox_Buscar.Text)).ToList();
+                    dataGridView_Fornecedores.DataSource = listaFornecedor;
                 }
             }
         }
@@ -61,6 +63,13 @@ namespace MiniERP
         private void button_Buscar_Click(object sender, EventArgs e)
         {
             listar();
+        }
+
+        private void button_Voltar_Click(object sender, EventArgs e)
+        {
+            Form_Principal principal = new Form_Principal();
+            principal.Show();
+            this.Hide();
         }
     }
 }

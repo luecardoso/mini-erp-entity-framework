@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button_Voltar = new Button();
             dataGridView_Clientes = new DataGridView();
             button_Buscar = new Button();
             textBox_Buscar = new TextBox();
@@ -43,6 +44,7 @@
             textBox_Nome = new TextBox();
             textBox_Id = new TextBox();
             label1 = new Label();
+            button_Editar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Clientes).BeginInit();
             SuspendLayout();
@@ -50,6 +52,8 @@
             // panel1
             // 
             panel1.BackColor = Color.GhostWhite;
+            panel1.Controls.Add(button_Editar);
+            panel1.Controls.Add(button_Voltar);
             panel1.Controls.Add(dataGridView_Clientes);
             panel1.Controls.Add(button_Buscar);
             panel1.Controls.Add(textBox_Buscar);
@@ -67,8 +71,18 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(807, 712);
+            panel1.Size = new Size(807, 726);
             panel1.TabIndex = 0;
+            // 
+            // button_Voltar
+            // 
+            button_Voltar.Location = new Point(37, 691);
+            button_Voltar.Name = "button_Voltar";
+            button_Voltar.Size = new Size(75, 23);
+            button_Voltar.TabIndex = 14;
+            button_Voltar.Text = "Voltar";
+            button_Voltar.UseVisualStyleBackColor = true;
+            button_Voltar.Click += button_Voltar_Click;
             // 
             // dataGridView_Clientes
             // 
@@ -84,7 +98,7 @@
             // 
             // button_Buscar
             // 
-            button_Buscar.Location = new Point(696, 246);
+            button_Buscar.Location = new Point(687, 244);
             button_Buscar.Name = "button_Buscar";
             button_Buscar.Size = new Size(75, 23);
             button_Buscar.TabIndex = 12;
@@ -111,6 +125,7 @@
             // 
             // comboBox_Sexo
             // 
+            comboBox_Sexo.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_Sexo.FormattingEnabled = true;
             comboBox_Sexo.Items.AddRange(new object[] { "Feminino", "Masculino", "Não Informar", "Outros" });
             comboBox_Sexo.Location = new Point(568, 132);
@@ -194,11 +209,21 @@
             label1.TabIndex = 0;
             label1.Text = "ID: ";
             // 
+            // button_Editar
+            // 
+            button_Editar.Location = new Point(687, 691);
+            button_Editar.Name = "button_Editar";
+            button_Editar.Size = new Size(75, 23);
+            button_Editar.TabIndex = 15;
+            button_Editar.Text = "Editar";
+            button_Editar.UseVisualStyleBackColor = true;
+            button_Editar.Click += button_Editar_Click;
+            // 
             // Form_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(807, 712);
+            ClientSize = new Size(807, 726);
             Controls.Add(panel1);
             Name = "Form_Cliente";
             Text = "Clientes";
@@ -225,5 +250,7 @@
         private Button button_Buscar;
         private TextBox textBox_Buscar;
         private DataGridView dataGridView_Clientes;
+        private Button button_Voltar;
+        private Button button_Editar;
     }
 }

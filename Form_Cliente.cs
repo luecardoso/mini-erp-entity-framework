@@ -48,16 +48,16 @@ namespace MiniERP
         {
             using (var contexto = new MiniErpContext())
             {
-                DataTable dt = new DataTable();
                 var clientes = contexto.Clientes.ToList();
-
                 if (String.IsNullOrEmpty(textBox_Buscar.Text))
                 {
                     dataGridView_Clientes.DataSource = clientes;
                 }
                 else
                 {
-
+                    var listaClientes = contexto.Clientes.Where(cli => 
+                    cli.Nome.Contains(textBox_Buscar.Text)).ToList();
+                    dataGridView_Clientes.DataSource = listaClientes;
                 }
             }
         }
@@ -67,5 +67,28 @@ namespace MiniERP
             listar();
         }
 
+        private void button_Voltar_Click(object sender, EventArgs e)
+        {
+            Form_Principal principal = new Form_Principal();
+            principal.Show();
+            this.Hide();
+        }
+
+        private void button_Editar_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    using (var contexto = new MiniErpContext())
+            //    {
+            //        var id = 
+            //        var cliente = contexto.Clientes.Find(id);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    throw;
+            //}
+        }
     }
 }

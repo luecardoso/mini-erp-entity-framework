@@ -37,6 +37,7 @@
             textBox_Nome = new TextBox();
             textBox_Id = new TextBox();
             label1 = new Label();
+            button_Voltar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Fornecedores).BeginInit();
             SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             panel1.BackColor = Color.GhostWhite;
+            panel1.Controls.Add(button_Voltar);
             panel1.Controls.Add(dataGridView_Fornecedores);
             panel1.Controls.Add(button_Buscar);
             panel1.Controls.Add(textBox_Buscar);
@@ -55,7 +57,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 594);
+            panel1.Size = new Size(800, 642);
             panel1.TabIndex = 0;
             // 
             // dataGridView_Fornecedores
@@ -130,11 +132,21 @@
             label1.TabIndex = 4;
             label1.Text = "ID: ";
             // 
+            // button_Voltar
+            // 
+            button_Voltar.Location = new Point(44, 607);
+            button_Voltar.Name = "button_Voltar";
+            button_Voltar.Size = new Size(75, 23);
+            button_Voltar.TabIndex = 18;
+            button_Voltar.Text = "Voltar";
+            button_Voltar.UseVisualStyleBackColor = true;
+            button_Voltar.Click += button_Voltar_Click;
+            // 
             // Form_Fornecedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 594);
+            ClientSize = new Size(800, 642);
             Controls.Add(panel1);
             Name = "Form_Fornecedor";
             Text = "Fornecedores";
@@ -155,5 +167,6 @@
         private Button button_Buscar;
         private TextBox textBox_Buscar;
         private Button button_Cadastrar;
+        private Button button_Voltar;
     }
 }

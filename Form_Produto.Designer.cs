@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button_Voltar = new Button();
             comboBox_Fornecedor = new ComboBox();
             label7 = new Label();
             textBox_Descricao = new TextBox();
@@ -39,7 +40,7 @@
             label4 = new Label();
             textBox_Quantidade = new TextBox();
             label3 = new Label();
-            dataGridView_Clientes = new DataGridView();
+            dataGridView_Produtos = new DataGridView();
             button_Buscar = new Button();
             textBox_Buscar = new TextBox();
             button_Cadastrar = new Button();
@@ -48,12 +49,13 @@
             textBox_Id = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_Clientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_Produtos).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.GhostWhite;
+            panel1.Controls.Add(button_Voltar);
             panel1.Controls.Add(comboBox_Fornecedor);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(textBox_Descricao);
@@ -64,7 +66,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(textBox_Quantidade);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(dataGridView_Clientes);
+            panel1.Controls.Add(dataGridView_Produtos);
             panel1.Controls.Add(button_Buscar);
             panel1.Controls.Add(textBox_Buscar);
             panel1.Controls.Add(button_Cadastrar);
@@ -75,11 +77,22 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 719);
+            panel1.Size = new Size(800, 738);
             panel1.TabIndex = 0;
+            // 
+            // button_Voltar
+            // 
+            button_Voltar.Location = new Point(39, 703);
+            button_Voltar.Name = "button_Voltar";
+            button_Voltar.Size = new Size(75, 23);
+            button_Voltar.TabIndex = 36;
+            button_Voltar.Text = "Voltar";
+            button_Voltar.UseVisualStyleBackColor = true;
+            button_Voltar.Click += button_Voltar_Click;
             // 
             // comboBox_Fornecedor
             // 
+            comboBox_Fornecedor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_Fornecedor.FormattingEnabled = true;
             comboBox_Fornecedor.Location = new Point(460, 122);
             comboBox_Fornecedor.Name = "comboBox_Fornecedor";
@@ -161,17 +174,17 @@
             label3.TabIndex = 26;
             label3.Text = "Quantidade";
             // 
-            // dataGridView_Clientes
+            // dataGridView_Produtos
             // 
-            dataGridView_Clientes.AllowUserToAddRows = false;
-            dataGridView_Clientes.AllowUserToDeleteRows = false;
-            dataGridView_Clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_Clientes.Location = new Point(52, 317);
-            dataGridView_Clientes.Name = "dataGridView_Clientes";
-            dataGridView_Clientes.ReadOnly = true;
-            dataGridView_Clientes.RowTemplate.Height = 25;
-            dataGridView_Clientes.Size = new Size(703, 367);
-            dataGridView_Clientes.TabIndex = 25;
+            dataGridView_Produtos.AllowUserToAddRows = false;
+            dataGridView_Produtos.AllowUserToDeleteRows = false;
+            dataGridView_Produtos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_Produtos.Location = new Point(52, 317);
+            dataGridView_Produtos.Name = "dataGridView_Produtos";
+            dataGridView_Produtos.ReadOnly = true;
+            dataGridView_Produtos.RowTemplate.Height = 25;
+            dataGridView_Produtos.Size = new Size(703, 367);
+            dataGridView_Produtos.TabIndex = 25;
             // 
             // button_Buscar
             // 
@@ -237,13 +250,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 719);
+            ClientSize = new Size(800, 738);
             Controls.Add(panel1);
             Name = "Form_Produto";
             Text = "Produto";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView_Clientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_Produtos).EndInit();
             ResumeLayout(false);
         }
 
@@ -252,7 +265,7 @@
         private Panel panel1;
         private TextBox textBox_Quantidade;
         private Label label3;
-        private DataGridView dataGridView_Clientes;
+        private DataGridView dataGridView_Produtos;
         private Button button_Buscar;
         private TextBox textBox_Buscar;
         private Button button_Cadastrar;
@@ -268,5 +281,6 @@
         private Label label4;
         private ComboBox comboBox_Fornecedor;
         private Label label7;
+        private Button button_Voltar;
     }
 }

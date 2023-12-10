@@ -33,11 +33,13 @@ namespace MiniERP
 
                 if (String.IsNullOrEmpty(textBox_Buscar.Text))
                 {
-                    dataGridView_Clientes.DataSource = produtos;
+                    dataGridView_Produtos.DataSource = produtos;
                 }
                 else
                 {
-
+                    var listaProdutos = contexto.Produtos.Where(prod =>
+                    prod.Nome.Contains(textBox_Buscar.Text)).ToList();
+                    dataGridView_Produtos.DataSource = listaProdutos;
                 }
             }
         }
@@ -73,7 +75,7 @@ namespace MiniERP
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar o produto");
-                MessageBox.Show("Erro: "+ex);
+                MessageBox.Show("Erro: " + ex);
 
             }
         }
@@ -93,6 +95,13 @@ namespace MiniERP
         private void CarregarCategorias()
         {
 
+        }
+
+        private void button_Voltar_Click(object sender, EventArgs e)
+        {
+            Form_Principal principal = new Form_Principal();
+            principal.Show();
+            this.Hide();
         }
     }
 }
