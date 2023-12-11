@@ -100,7 +100,6 @@ namespace MiniERP
         {
             using (var contexto = new MiniErpContext())
             {
-                DataTable dt = new DataTable();
                 var produtos = contexto.Produtos.ToList();
 
                 if (String.IsNullOrEmpty(textBox_BuscarProduto.Text))
@@ -114,6 +113,12 @@ namespace MiniERP
                     dataGridView_Produtos.DataSource = listaProdutos;
                 }
             }
+        }
+
+        private void button_SelecionarCliente_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dataGridView_Clientes.SelectedRows[0].Cells[0].Value.ToString());
+            //dataGridView_Clientes.Rows[]
         }
     }
 }

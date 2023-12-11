@@ -28,7 +28,6 @@ namespace MiniERP
         {
             using (var contexto = new MiniErpContext())
             {
-                DataTable dt = new DataTable();
                 var produtos = contexto.Produtos.ToList();
 
                 if (String.IsNullOrEmpty(textBox_Buscar.Text))
@@ -59,7 +58,11 @@ namespace MiniERP
                     produto.Nome = textBox_Nome.Text;
                     produto.Quantidade = int.Parse(textBox_Quantidade.Text);
                     produto.Preco = float.Parse(textBox_Preco.Text);
-                    produto.FkFornecedor = comboBox_Fornecedor.SelectedIndex;
+
+                    //var id = comboBox_Fornecedor.SelectedIndex + 1;
+                    //var id = contexto.Fornecedors.Where(f => f.)
+                    //var fornecedor = contexto.Fornecedors.Find(id);
+                    //produto.FkFornecedor = fornecedor.Id;
                     produto.Descricao = textBox_Descricao.Text;
 
 
@@ -86,7 +89,7 @@ namespace MiniERP
             {
                 var fornecedores = contexto.Fornecedors.ToList();
                 comboBox_Fornecedor.Items.Clear();
-                comboBox_Fornecedor.DisplayMember = "Nome";
+                comboBox_Fornecedor.DisplayMember = "Id";
                 comboBox_Fornecedor.DataSource = fornecedores;
                 comboBox_Fornecedor.Refresh();
             }

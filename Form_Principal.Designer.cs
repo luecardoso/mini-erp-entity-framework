@@ -134,6 +134,7 @@
             button_SelecionarCliente.TabIndex = 14;
             button_SelecionarCliente.Text = "Selecionar";
             button_SelecionarCliente.UseVisualStyleBackColor = true;
+            button_SelecionarCliente.Click += button_SelecionarCliente_Click;
             // 
             // textBox_BuscarCliente
             // 
@@ -144,10 +145,14 @@
             // 
             // dataGridView_Clientes
             // 
+            dataGridView_Clientes.AllowUserToAddRows = false;
+            dataGridView_Clientes.AllowUserToDeleteRows = false;
             dataGridView_Clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_Clientes.Location = new Point(25, 92);
             dataGridView_Clientes.Name = "dataGridView_Clientes";
+            dataGridView_Clientes.ReadOnly = true;
             dataGridView_Clientes.RowTemplate.Height = 25;
+            dataGridView_Clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_Clientes.Size = new Size(559, 126);
             dataGridView_Clientes.TabIndex = 12;
             // 
@@ -193,6 +198,7 @@
             dataGridView_Produtos.Location = new Point(25, 355);
             dataGridView_Produtos.Name = "dataGridView_Produtos";
             dataGridView_Produtos.RowTemplate.Height = 25;
+            dataGridView_Produtos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_Produtos.Size = new Size(559, 318);
             dataGridView_Produtos.TabIndex = 7;
             // 

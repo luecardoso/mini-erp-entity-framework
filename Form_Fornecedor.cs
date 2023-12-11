@@ -44,7 +44,6 @@ namespace MiniERP
         {
             using (var contexto = new MiniErpContext())
             {
-                DataTable dt = new DataTable();
                 var fornecedores = contexto.Fornecedors.ToList();
 
                 if (String.IsNullOrEmpty(textBox_Buscar.Text))

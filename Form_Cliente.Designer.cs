@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button_Editar = new Button();
             button_Voltar = new Button();
             dataGridView_Clientes = new DataGridView();
             button_Buscar = new Button();
@@ -44,7 +45,7 @@
             textBox_Nome = new TextBox();
             textBox_Id = new TextBox();
             label1 = new Label();
-            button_Editar = new Button();
+            button_Excluir = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Clientes).BeginInit();
             SuspendLayout();
@@ -52,6 +53,7 @@
             // panel1
             // 
             panel1.BackColor = Color.GhostWhite;
+            panel1.Controls.Add(button_Excluir);
             panel1.Controls.Add(button_Editar);
             panel1.Controls.Add(button_Voltar);
             panel1.Controls.Add(dataGridView_Clientes);
@@ -74,6 +76,16 @@
             panel1.Size = new Size(807, 726);
             panel1.TabIndex = 0;
             // 
+            // button_Editar
+            // 
+            button_Editar.Location = new Point(687, 691);
+            button_Editar.Name = "button_Editar";
+            button_Editar.Size = new Size(75, 23);
+            button_Editar.TabIndex = 15;
+            button_Editar.Text = "Editar";
+            button_Editar.UseVisualStyleBackColor = true;
+            button_Editar.Click += button_Editar_Click;
+            // 
             // button_Voltar
             // 
             button_Voltar.Location = new Point(37, 691);
@@ -93,6 +105,7 @@
             dataGridView_Clientes.Name = "dataGridView_Clientes";
             dataGridView_Clientes.ReadOnly = true;
             dataGridView_Clientes.RowTemplate.Height = 25;
+            dataGridView_Clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_Clientes.Size = new Size(703, 367);
             dataGridView_Clientes.TabIndex = 13;
             // 
@@ -119,7 +132,7 @@
             button_Cadastrar.Name = "button_Cadastrar";
             button_Cadastrar.Size = new Size(75, 23);
             button_Cadastrar.TabIndex = 10;
-            button_Cadastrar.Text = "Cadastrar";
+            button_Cadastrar.Text = "Salvar";
             button_Cadastrar.UseVisualStyleBackColor = true;
             button_Cadastrar.Click += button_Cadastrar_Click;
             // 
@@ -209,15 +222,15 @@
             label1.TabIndex = 0;
             label1.Text = "ID: ";
             // 
-            // button_Editar
+            // button_Excluir
             // 
-            button_Editar.Location = new Point(687, 691);
-            button_Editar.Name = "button_Editar";
-            button_Editar.Size = new Size(75, 23);
-            button_Editar.TabIndex = 15;
-            button_Editar.Text = "Editar";
-            button_Editar.UseVisualStyleBackColor = true;
-            button_Editar.Click += button_Editar_Click;
+            button_Excluir.Location = new Point(362, 691);
+            button_Excluir.Name = "button_Excluir";
+            button_Excluir.Size = new Size(75, 23);
+            button_Excluir.TabIndex = 16;
+            button_Excluir.Text = "Excluir";
+            button_Excluir.UseVisualStyleBackColor = true;
+            button_Excluir.Click += button_Excluir_Click;
             // 
             // Form_Cliente
             // 
@@ -252,5 +265,6 @@
         private DataGridView dataGridView_Clientes;
         private Button button_Voltar;
         private Button button_Editar;
+        private Button button_Excluir;
     }
 }
