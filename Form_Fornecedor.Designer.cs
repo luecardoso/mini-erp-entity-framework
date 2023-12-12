@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button_Excluir = new Button();
+            button_Editar = new Button();
+            button_Voltar = new Button();
             dataGridView_Fornecedores = new DataGridView();
             button_Buscar = new Button();
             textBox_Buscar = new TextBox();
@@ -37,7 +40,6 @@
             textBox_Nome = new TextBox();
             textBox_Id = new TextBox();
             label1 = new Label();
-            button_Voltar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Fornecedores).BeginInit();
             SuspendLayout();
@@ -45,6 +47,8 @@
             // panel1
             // 
             panel1.BackColor = Color.GhostWhite;
+            panel1.Controls.Add(button_Excluir);
+            panel1.Controls.Add(button_Editar);
             panel1.Controls.Add(button_Voltar);
             panel1.Controls.Add(dataGridView_Fornecedores);
             panel1.Controls.Add(button_Buscar);
@@ -60,6 +64,36 @@
             panel1.Size = new Size(800, 642);
             panel1.TabIndex = 0;
             // 
+            // button_Excluir
+            // 
+            button_Excluir.Location = new Point(347, 607);
+            button_Excluir.Name = "button_Excluir";
+            button_Excluir.Size = new Size(75, 23);
+            button_Excluir.TabIndex = 20;
+            button_Excluir.Text = "Excluir";
+            button_Excluir.UseVisualStyleBackColor = true;
+            button_Excluir.Click += button_Excluir_Click;
+            // 
+            // button_Editar
+            // 
+            button_Editar.Location = new Point(686, 607);
+            button_Editar.Name = "button_Editar";
+            button_Editar.Size = new Size(75, 23);
+            button_Editar.TabIndex = 19;
+            button_Editar.Text = "Editar";
+            button_Editar.UseVisualStyleBackColor = true;
+            button_Editar.Click += button_Editar_Click;
+            // 
+            // button_Voltar
+            // 
+            button_Voltar.Location = new Point(44, 607);
+            button_Voltar.Name = "button_Voltar";
+            button_Voltar.Size = new Size(75, 23);
+            button_Voltar.TabIndex = 18;
+            button_Voltar.Text = "Voltar";
+            button_Voltar.UseVisualStyleBackColor = true;
+            button_Voltar.Click += button_Voltar_Click;
+            // 
             // dataGridView_Fornecedores
             // 
             dataGridView_Fornecedores.AllowUserToAddRows = false;
@@ -69,6 +103,7 @@
             dataGridView_Fornecedores.Name = "dataGridView_Fornecedores";
             dataGridView_Fornecedores.ReadOnly = true;
             dataGridView_Fornecedores.RowTemplate.Height = 25;
+            dataGridView_Fornecedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_Fornecedores.Size = new Size(703, 367);
             dataGridView_Fornecedores.TabIndex = 17;
             // 
@@ -95,7 +130,7 @@
             button_Cadastrar.Name = "button_Cadastrar";
             button_Cadastrar.Size = new Size(75, 23);
             button_Cadastrar.TabIndex = 14;
-            button_Cadastrar.Text = "Cadastrar";
+            button_Cadastrar.Text = "Salvar";
             button_Cadastrar.UseVisualStyleBackColor = true;
             button_Cadastrar.Click += button_Cadastrar_Click;
             // 
@@ -132,16 +167,6 @@
             label1.TabIndex = 4;
             label1.Text = "ID: ";
             // 
-            // button_Voltar
-            // 
-            button_Voltar.Location = new Point(44, 607);
-            button_Voltar.Name = "button_Voltar";
-            button_Voltar.Size = new Size(75, 23);
-            button_Voltar.TabIndex = 18;
-            button_Voltar.Text = "Voltar";
-            button_Voltar.UseVisualStyleBackColor = true;
-            button_Voltar.Click += button_Voltar_Click;
-            // 
             // Form_Fornecedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -168,5 +193,7 @@
         private TextBox textBox_Buscar;
         private Button button_Cadastrar;
         private Button button_Voltar;
+        private Button button_Excluir;
+        private Button button_Editar;
     }
 }

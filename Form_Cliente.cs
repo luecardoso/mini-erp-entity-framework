@@ -25,7 +25,6 @@ namespace MiniERP
         {
             if (textBox_Id.Text != null)
             {
-                MessageBox.Show(textBox_Id.Text);
                 salvarAlterado();
             }
             else

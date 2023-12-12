@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            textBox_Id = new TextBox();
+            button_Editar = new Button();
             button_Voltar = new Button();
             comboBox_Fornecedor = new ComboBox();
             label7 = new Label();
@@ -46,7 +48,6 @@
             button_Cadastrar = new Button();
             label2 = new Label();
             textBox_Nome = new TextBox();
-            textBox_Id = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Produtos).BeginInit();
@@ -55,6 +56,8 @@
             // panel1
             // 
             panel1.BackColor = Color.GhostWhite;
+            panel1.Controls.Add(textBox_Id);
+            panel1.Controls.Add(button_Editar);
             panel1.Controls.Add(button_Voltar);
             panel1.Controls.Add(comboBox_Fornecedor);
             panel1.Controls.Add(label7);
@@ -72,13 +75,30 @@
             panel1.Controls.Add(button_Cadastrar);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(textBox_Nome);
-            panel1.Controls.Add(textBox_Id);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 738);
             panel1.TabIndex = 0;
+            // 
+            // textBox_Id
+            // 
+            textBox_Id.Enabled = false;
+            textBox_Id.Location = new Point(69, 74);
+            textBox_Id.Name = "textBox_Id";
+            textBox_Id.Size = new Size(49, 23);
+            textBox_Id.TabIndex = 1;
+            // 
+            // button_Editar
+            // 
+            button_Editar.Location = new Point(680, 703);
+            button_Editar.Name = "button_Editar";
+            button_Editar.Size = new Size(75, 23);
+            button_Editar.TabIndex = 37;
+            button_Editar.Text = "Editar";
+            button_Editar.UseVisualStyleBackColor = true;
+            button_Editar.Click += button_Editar_Click;
             // 
             // button_Voltar
             // 
@@ -97,7 +117,7 @@
             comboBox_Fornecedor.Location = new Point(460, 122);
             comboBox_Fornecedor.Name = "comboBox_Fornecedor";
             comboBox_Fornecedor.Size = new Size(310, 23);
-            comboBox_Fornecedor.TabIndex = 35;
+            comboBox_Fornecedor.TabIndex = 5;
             // 
             // label7
             // 
@@ -114,7 +134,7 @@
             textBox_Descricao.Multiline = true;
             textBox_Descricao.Name = "textBox_Descricao";
             textBox_Descricao.Size = new Size(316, 82);
-            textBox_Descricao.TabIndex = 33;
+            textBox_Descricao.TabIndex = 6;
             // 
             // label6
             // 
@@ -147,7 +167,7 @@
             textBox_Preco.Location = new Point(235, 122);
             textBox_Preco.Name = "textBox_Preco";
             textBox_Preco.Size = new Size(100, 23);
-            textBox_Preco.TabIndex = 29;
+            textBox_Preco.TabIndex = 4;
             // 
             // label4
             // 
@@ -163,7 +183,7 @@
             textBox_Quantidade.Location = new Point(114, 122);
             textBox_Quantidade.Name = "textBox_Quantidade";
             textBox_Quantidade.Size = new Size(60, 23);
-            textBox_Quantidade.TabIndex = 27;
+            textBox_Quantidade.TabIndex = 3;
             // 
             // label3
             // 
@@ -183,6 +203,7 @@
             dataGridView_Produtos.Name = "dataGridView_Produtos";
             dataGridView_Produtos.ReadOnly = true;
             dataGridView_Produtos.RowTemplate.Height = 25;
+            dataGridView_Produtos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_Produtos.Size = new Size(703, 367);
             dataGridView_Produtos.TabIndex = 25;
             // 
@@ -208,8 +229,8 @@
             button_Cadastrar.Location = new Point(680, 225);
             button_Cadastrar.Name = "button_Cadastrar";
             button_Cadastrar.Size = new Size(75, 23);
-            button_Cadastrar.TabIndex = 22;
-            button_Cadastrar.Text = "Cadastrar";
+            button_Cadastrar.TabIndex = 7;
+            button_Cadastrar.Text = "Salvar";
             button_Cadastrar.UseVisualStyleBackColor = true;
             button_Cadastrar.Click += button_Cadastrar_Click;
             // 
@@ -227,15 +248,7 @@
             textBox_Nome.Location = new Point(180, 74);
             textBox_Nome.Name = "textBox_Nome";
             textBox_Nome.Size = new Size(590, 23);
-            textBox_Nome.TabIndex = 20;
-            // 
-            // textBox_Id
-            // 
-            textBox_Id.Enabled = false;
-            textBox_Id.Location = new Point(69, 74);
-            textBox_Id.Name = "textBox_Id";
-            textBox_Id.Size = new Size(49, 23);
-            textBox_Id.TabIndex = 19;
+            textBox_Nome.TabIndex = 2;
             // 
             // label1
             // 
@@ -271,7 +284,6 @@
         private Button button_Cadastrar;
         private Label label2;
         private TextBox textBox_Nome;
-        private TextBox textBox_Id;
         private Label label1;
         private TextBox textBox_Descricao;
         private Label label6;
@@ -282,5 +294,7 @@
         private ComboBox comboBox_Fornecedor;
         private Label label7;
         private Button button_Voltar;
+        private Button button_Editar;
+        private TextBox textBox_Id;
     }
 }
